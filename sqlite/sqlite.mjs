@@ -34,15 +34,10 @@ for (const migrationName of await readdir(migDir)) {
 console.log('all migrations applied !')
 
 // prepare queries
-export default Object.fromEntries(
-  (await readFile(join(rootDir, 'prepared-queries.sql'), 'utf8'))
+const queriesList = await readdir(join(rootDir, 'queries'))
+const queriesEntries = queriesList.map(async name => {
+  const sql = await readFile(join(rootDir, 'queries', name), 'utf8')
+  return [name.slice(0, -'.sql'.length), db.prepare(sql)]
+})
 
-    // parse the file
-    .split(/-- ⚡ ([a-z0-1_]+)/ig)
-    .flatMap((_, i, arr) => (i % 2 ? [[_, arr[i + 1]]] : []))
-
-    // create the functions
-    .map(([name, sql]) => {
-      return [name, db.prepare(sql)]
-    }),
-)
+export default Object.fromEntries(await Promise.all(queriesEntries))

@@ -1,4 +1,3 @@
-
 CREATE TABLE user (
   -- external, imported from zone01normandie.org
   createdAt  int NOT NULL,
@@ -8,7 +7,6 @@ CREATE TABLE user (
   -- current step of the student onboarding
   step       text,
 
-  -- store last notification time and step
-  notifyStep text,
+  -- store last notification time
   notifyAt   int
 );
