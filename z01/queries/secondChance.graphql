@@ -1,21 +1,3 @@
-query unfishinedToad {
-  games: toad_sessions(
-    where: {
-      _and: [
-        { started_at: { _is_null: false } }
-        { final_score: { _is_null: true } }
-        { candidate: {} }
-      ]
-    }
-  ) {
-    updatedAt: updated_at
-    candidate {
-      login
-      attrs
-    }
-  }
-}
-
 query secondChance($games: String!) {
   users: user(
     where: {
@@ -37,13 +19,5 @@ query secondChance($games: String!) {
         count
       }
     }
-  }
-}
-
-query newUsers($latest: timestamptz!) {
-  newUsers: user(where: { createdAt: { _gt: $latest } }) {
-    createdAt
-    login
-    attrs
   }
 }
