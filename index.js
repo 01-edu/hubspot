@@ -39,7 +39,7 @@ for (const {candidate} of games) {
 }
 
 // Send email to user that have a second chance
-const { users } = await z01.secondChance()
+const { users } = await z01.secondChance({ path: '/rouen/onboarding/games' })
 await email.secondChance({
   subject: '',
   recievers: users.map(user => user.attrs.email),
