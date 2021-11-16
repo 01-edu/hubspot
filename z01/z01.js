@@ -1,7 +1,7 @@
 import { readdir, readFile } from 'fs/promises'
 import { join, dirname } from 'path'
 import { createClient } from '@01-edu/api'
-import { z01Credentials } from '../config.mjs'
+import { z01Credentials } from '../config.js'
 
 const { run } = await createClient(z01Credentials)
 

@@ -1,6 +1,6 @@
-import z01 from './z01/z01.mjs'
-import sql from './sqlite/sqlite.mjs'
-import email from './email/email.mjs'
+import z01 from './z01/z01.js'
+import sql from './sqlite/sqlite.js'
+import email from './email/email.js'
 
 /*
  * Load new user and save them locally to sqlite
