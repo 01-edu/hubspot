@@ -1,0 +1,49 @@
+query unfishinedToad {
+  games: toad_sessions(
+    where: {
+      _and: [
+        { started_at: { _is_null: false } }
+        { final_score: { _is_null: true } }
+        { candidate: {} }
+      ]
+    }
+  ) {
+    updatedAt: updated_at
+    candidate {
+      login
+      attrs
+    }
+  }
+}
+
+query secondChance($games: String!) {
+  users: user(
+    where: {
+      _and: [
+        { progresses: { path: { _eq: $games }, grade: { _eq: 0 } } }
+        { _not: { progresses: { path: { _eq: $games }, grade: { _neq: 0 } } } }
+        {
+          _not: {
+            progresses: { path: { _eq: $games }, grade: { _is_null: true } }
+          }
+        }
+      ]
+    }
+  ) {
+    login
+    attrs
+    progress: progresses_aggregate(where: { path: { _eq: $games } }) {
+      games: aggregate {
+        count
+      }
+    }
+  }
+}
+
+query newUsers($latest: timestamptz!) {
+  newUsers: user(where: { createdAt: { _gt: $latest } }) {
+    createdAt
+    login
+    attrs
+  }
+}

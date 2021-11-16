@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@01-edu/api": "^1.1.0",
+    "better-sqlite3": "^7.4.4",
+    "nodemailer": "^6.7.1"
+  }
+}
