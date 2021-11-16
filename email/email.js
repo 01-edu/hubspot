@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer'
 import { readdir, readFile } from 'fs/promises'
 import { join, dirname } from 'path'
-import { sender, nodemailerConfig } from '../config.mjs'
+import { sender, nodemailerConfig } from '../config.js'
 
 // const transporter = nodemailer.createTransport(nodemailerConfig)
 const transporter = { sendMail: console.log }
