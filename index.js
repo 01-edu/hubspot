@@ -30,22 +30,22 @@ console.log(newUserCount, 'new user loaded')
 // Send email to user with unfinished toad session
 const { games } = await z01.unfishinedToad()
 await email.reminder({
-  subject: '',
+  subject: "Un challenge t'attend !",
   recievers: games.map(({ candidate }) => candidate.attrs.email),
 })
 
-for (const {candidate} of games) {
+for (const { candidate } of games) {
   sql.setUserStep.run(candidate.login, 'reminder')
 }
 
 // Send email to user that have a second chance
 const { users } = await z01.secondChance({ path: '/rouen/onboarding/games' })
 await email.secondChance({
-  subject: '',
+  subject:
+    "Le numérique va changer ta vie : une 2ème opportunité s'offre à toi!",
   recievers: users.map(user => user.attrs.email),
 })
 
-
-for (const {candidate} of games) {
+for (const { candidate } of games) {
   sql.setUserStep.run(candidate.login, 'secondchance')
 }
