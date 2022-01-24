@@ -1,6 +1,6 @@
 # z01mails
 
-Template repository to use the API, here used to send emails and synchronize the list of users
+Template repository to use the API, used in this example to send emails and synchronize the list of users.
 
 
 ## Stack
