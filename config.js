@@ -1,15 +1,8 @@
-export const z01Credentials = {
-  domain: process.env.DOMAIN || 'dev.01-edu.org',
-  access_token: process.env.Z01_TOKEN || 'eb9952902ce482125a12da0ad88782473428aec1',
-}
+const {
+  DOMAIN = 'dev.01-edu.org',
+  Z01_TOKEN = 'a6b38ae9dc69c141ccd3b04bbb2d3091f2e2bbb4',
+  HUBSPOT_TOKEN, // hubspot api access token
+} = process.env
 
-export const sender = '"Zone01 Rouen" <noreply@zone01normandie.org>'
-export const nodemailerConfig = {
-  host: 'smtp.office365.com',
-  port: 587,
-  tls: { ciphers: 'SSLv3' },
-  auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
-  },
-}
+export const z01Credentials = { domain: DOMAIN, access_token: Z01_TOKEN }
+export const hubSpotCredentials = { accessToken: HUBSPOT_TOKEN }

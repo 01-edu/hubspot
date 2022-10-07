@@ -1,4 +1,4 @@
-# z01mails
+# z01hubspot
 
 Template repository to use the API, used in this example to send emails and synchronize the list of users.
 
@@ -17,8 +17,7 @@ Template repository to use the API, used in this example to send emails and sync
 
 - `DOMAIN` domain of the school to query
 - `Z01_TOKEN` more info in how to get your read-only access token on [@01-edu/api documentation](https://www.npmjs.com/package/@01-edu/api)
-- `MAIL_USER` nodemailer user
-- `MAIL_PASS` nodemailer password
+- `HUBSPOT_TOKEN` an api token from hubspot
 
 ## Structure
 

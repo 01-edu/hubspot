@@ -13,4 +13,21 @@ const queriesEntries = queriesList.map(async name => {
   return [name.slice(0, -'.graphql'.length), variables => run(query, variables)]
 })
 
-export default Object.fromEntries(await Promise.all(queriesEntries))
+
+const API = async (path, opts) => {
+  const res = await fetch(`https://${z01Credentials.domain}/api/${path}`)
+  if (res.status === 204) return
+  return res.json()
+}
+
+export const getCampuses = async () => {
+  const { campuses } = await API('object')
+  return Promise.all(campuses.map(c => API(`object/${c.name}`)))
+}
+
+export default {
+  API,
+  getCampuses,
+  ...Object.fromEntries(await Promise.all(queriesEntries))
+}
+

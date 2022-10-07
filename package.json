@@ -1,8 +1,10 @@
 {
   "type": "module",
+  "private": true,
   "dependencies": {
-    "@01-edu/api": "^1.1.0",
-    "better-sqlite3": "^7.4.4",
-    "nodemailer": "^6.7.1"
+    "@01-edu/api": "^1.1.1",
+    "@hubspot/api-client": "^7.1.2",
+    "better-sqlite3": "^7.6.2",
+    "nodemailer": "^6.8.0"
   }
 }

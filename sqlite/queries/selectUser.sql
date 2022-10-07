@@ -1,8 +1,8 @@
 SELECT
-  createdAt,
+  id,
   login,
   email,
   step,
-  notifyAt
+  updatedAt
 FROM user
-WHERE login = ?
+WHERE id = ?
