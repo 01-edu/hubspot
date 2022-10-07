@@ -1,3 +1,3 @@
 UPDATE user
-SET notifyStep=:notifyStep, notifyAt=:notifyAt
-WHERE login=:login
+SET step=:step, updatedAt=:updatedAt
+WHERE id=:id

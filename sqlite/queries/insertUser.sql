@@ -1,4 +1,4 @@
 INSERT INTO user
-  (createdAt, login, email)
+  (id, login, email)
 VALUES
-  (?, ?, ?)
+  (:id, :login, :email)

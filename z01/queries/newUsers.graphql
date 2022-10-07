@@ -1,7 +1,8 @@
-query newUsers($latest: timestamptz!) {
-  newUsers: user(where: { createdAt: { _gt: $latest } }) {
-    createdAt
+query newUsers($before: Int!, $after: Int!) {
+  newUsers: user(where: { id: { _gt: $after, _lte: $before } }) {
+    id
     login
-    attrs
+    email
+    createdAt
   }
 }
