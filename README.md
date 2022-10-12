@@ -1,4 +1,4 @@
-# z01hubspot
+# hubspot
 
 Template repository to use the API, used in this example to send emails and synchronize the list of users.
 
@@ -8,8 +8,8 @@ Template repository to use the API, used in this example to send emails and sync
 > This code use NodeJS, queries are in `SQL` and `GraphQL`
 
 - `@01-edu/api` to use our graphQL API
+- `@hubspot/api-client` to connect to hubspot
 - `better-sqlite3` to use a local database
-- `nodemailer` to send emails
 
 ## Env variables
 
