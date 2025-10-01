@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@01-edu/api": "^1.1.1",
-    "@hubspot/api-client": "^13.1.0",
+    "@hubspot/api-client": "^13.4.0",
     "better-sqlite3": "^12.2.0",
     "nodemailer": "^7.0.6"
   }
