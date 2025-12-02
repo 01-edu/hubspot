@@ -4,7 +4,7 @@
   "dependencies": {
     "@01-edu/api": "^1.1.1",
     "@hubspot/api-client": "^13.4.0",
-    "better-sqlite3": "^12.4.1",
+    "better-sqlite3": "^12.5.0",
     "nodemailer": "^7.0.11"
   }
 }
